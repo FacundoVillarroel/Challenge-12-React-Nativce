@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 
+import AppNavigator from "./navigation/index"
+
 export default function App() {
   const [loaded] = useFonts({
     "Anek-Light" : require("../assets/fonts/AnekDevanagari-Light.ttf"),
@@ -19,17 +21,13 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <AppNavigator/>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   }
