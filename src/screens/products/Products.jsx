@@ -9,7 +9,7 @@ const Products = ({navigation}) => {
       <Text style={styles.title}>Products</Text>
       <Button
         title="Go to Product"
-        color={colors.primary}
+        color={colors.secondary}
         onPress={() => navigation.navigate('Product')}
       />
     </View>
