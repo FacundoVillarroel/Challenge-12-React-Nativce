@@ -1,17 +1,13 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
 
+import { isAndroid } from "../../utils/index"
 import { COLORS } from '../../constants/colors';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: COLORS.background,
-  },
-  title: {
-    fontFamily: 'Anek-Bold',
-    fontSize: 20,
-    color: COLORS.primaryText,
-  },
+    backgroundColor:COLORS.background,
+    marginTop: isAndroid ? StatusBar.currentHeight : 0,
+    paddingTop: 20
+  }
 });

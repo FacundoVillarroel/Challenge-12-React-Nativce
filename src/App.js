@@ -2,6 +2,7 @@ import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 
 import AppNavigator from "./navigation/index"
+import { COLORS } from './constants/colors';
 
 export default function App() {
   const [loaded] = useFonts({
@@ -29,5 +30,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:COLORS.background
   }
 });

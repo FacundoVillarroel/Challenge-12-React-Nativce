@@ -1,19 +1,29 @@
-import { Text, View, Button } from 'react-native'
-import React from 'react'
+import { FlatList, SafeAreaView } from 'react-native';
+import React from 'react';
 
-import { COLORS } from '../../constants/colors'
-import { styles } from "./styles"
+import { CATEGORIES } from "../../constants/data/index";
+import { styles } from "./styles";
+import { CategoryItem } from '../../components';
 
 const Categories = ({ navigation }) => {
+
+  const onSelected = (item) => {
+    console.warn("onSelected", item)
+  }
+
+  const renderItem = ({ item }) => {
+    return <CategoryItem item={item} onSelected={onSelected} />
+  }
+
     return (
-      <View style={styles.container}>
-      <Text style={styles.title}>Categories</Text>
-      <Button
-        title="Go to Products"
-        color={COLORS.secondary}
-        onPress={() => navigation.navigate('Products')}
-      />
-    </View>
+      <SafeAreaView style={styles.container}>
+        <FlatList
+          data={CATEGORIES}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id.toString()}
+          style={styles.container}
+        />
+      </SafeAreaView>
     )
   }
 

@@ -5,7 +5,6 @@ import { Categories, Products, Product } from "../screens/index";
 import { COLORS } from "../constants/colors";
 
 const Stack = createNativeStackNavigator();
-
 const ShopNavigator = () => {
   return (
     <Stack.Navigator
