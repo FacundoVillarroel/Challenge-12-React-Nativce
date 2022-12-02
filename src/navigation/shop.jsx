@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Categories, Products, Product } from "../screens/index";
-import { colors } from "../constants/colors";
+import { COLORS } from "../constants/colors";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,9 +12,9 @@ const ShopNavigator = () => {
       initialRouteName="Categories"
       screenOptions={{
         headerStyle: {
-          backgroundColor: colors.background,
+          backgroundColor: COLORS.background,
         },
-        headerTintColor: colors.primaryText,
+        headerTintColor: COLORS.primaryText,
         headerTitleStyle: {
           fontFamily: 'Anek-Bold',
         },
