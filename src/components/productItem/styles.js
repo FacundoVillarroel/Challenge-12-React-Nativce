@@ -14,24 +14,20 @@ export const styles = StyleSheet.create({
   itemContainer:{
     flex:1,
     justifyContent:"space-evenly",
+    alignItems:"center"
   },
   title:{
-    fontSize:22,
+    fontSize:20,
     fontFamily:"Anek-Bold",
     borderBottomWidth:1,
     borderBottomColor:COLORS.danger,
-    width:"80%"
   },
   detailsContainer:{
     paddingVertical:5
   },
-  description:{
-    fontSize:15,
-    fontFamily:"Anek-Regular"
-  },
   price:{
-    paddingTop:10,
-    fontSize:20,
+    borderTopColor:COLORS.danger,
+    fontSize:18,
     fontFamily:"Anek-SemiBold",
   },
 })

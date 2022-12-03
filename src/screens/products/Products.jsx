@@ -3,7 +3,6 @@ import React from 'react'
 
 import { PRODUCTS } from "../../constants/data/index"
 import { styles } from "./styles"
-import { COLORS } from '../../constants/colors'
 import { ProductItem } from '../../components'
 
 const Products = ({ navigation, route}) => {
@@ -12,7 +11,7 @@ const Products = ({ navigation, route}) => {
   const filteredProducts = PRODUCTS.filter(product => product.categoryId == categoryId) 
 
   const onSelected = (item) => {
-    navigation.navigate("Product", {item})
+    navigation.navigate("Product", {productId:item.id})
   }
 
   const renderItem = ({item}) => {

@@ -12,7 +12,6 @@ const ProductItem = ({ item, onSelected }) => {
       >
         <Text style={styles.title}>{(item.title).toUpperCase()}</Text>
         <View style={styles.detailsContainer}>
-          <Text style={styles.description}>{item.description}</Text>
           <Text style={styles.price}>${item.price}</Text>
         </View>
       </TouchableOpacity>

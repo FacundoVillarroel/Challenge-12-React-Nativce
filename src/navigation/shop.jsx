@@ -17,7 +17,7 @@ const ShopNavigator = () => {
         headerTitleStyle: {
           fontFamily: 'Anek-Bold',
         },
-        
+        headerBackTitle:"",
       }}>
       <Stack.Screen
         name="Categories"
@@ -31,7 +31,11 @@ const ShopNavigator = () => {
           title:(route.params.title).toUpperCase()
         })} 
       />
-      <Stack.Screen name="Product" component={Product} />
+      <Stack.Screen name="Product" component={Product} 
+        options={( {route} ) => ({
+          title:""
+        })}
+      />
     </Stack.Navigator>
   );
 };
