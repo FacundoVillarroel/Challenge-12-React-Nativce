@@ -14,9 +14,5 @@ export const CATEGORIES = [
   {
     id:4,
     title:"calzonis",
-  },
-  {
-    id:5,
-    title:"pastas",
-  },
+  }
 ]

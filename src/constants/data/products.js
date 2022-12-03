@@ -9,7 +9,7 @@ export const PRODUCTS = [
   {
     id:2,
     categoryId:1,
-    title:"empanada depollo",
+    title:"empanada de pollo",
     description:"Carne de pollo, Cebolla, Cebolla de verdeo, Comino, Huevo, Papa, Pimiento.",
     price:180.0,
   },

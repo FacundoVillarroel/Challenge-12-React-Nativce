@@ -8,7 +8,7 @@ import { CategoryItem } from '../../components';
 const Categories = ({ navigation }) => {
 
   const onSelected = (item) => {
-    console.warn("onSelected", item)
+    navigation.navigate("Products", {categoryId: item.id, title:item.title })
   }
 
   const renderItem = ({ item }) => {
