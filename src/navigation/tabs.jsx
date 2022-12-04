@@ -15,7 +15,7 @@ const Tabs = () => {
     <BottomTab.Navigator
       initialRouteName="ShopTab"
       screenOptions={{
-        headerShown:false,
+        headerTitleAlign:"center",
         tabBarLabelStyle:{
           fontSize:15,
           fontFamily:"Anek-SemiBold"
@@ -32,6 +32,7 @@ const Tabs = () => {
         name="ShopTab" 
         component={ShopNavigator} 
         options={{
+          headerShown:false,
           title: "Shop",
           tabBarIcon: ({ focused }) => (
             <Ionicons name={focused ? "home" : "home-outline"} size={22} color={COLORS.primary}
