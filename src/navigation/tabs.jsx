@@ -3,6 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ShopNavigator from "./shop";
 import OrdersNavigator from "./orders";
 import CartNavigator from "./cart";
+
+import { isAndroid } from "../utils";
 import { Ionicons } from "@expo/vector-icons" 
 import { COLORS } from "../constants/colors";
 
@@ -13,7 +15,17 @@ const Tabs = () => {
     <BottomTab.Navigator
       initialRouteName="ShopTab"
       screenOptions={{
-        headerShown:false
+        headerShown:false,
+        tabBarLabelStyle:{
+          fontSize:15,
+          fontFamily:"Anek-SemiBold"
+        },
+        tabBarActiveTintColor:COLORS.secondary,
+        tabBarInactiveTintColor:COLORS.secondaryText,
+        tabBarStyle:{
+          height:80,
+          paddingBottom:10
+        }
       }}
     >
       <BottomTab.Screen 
@@ -22,10 +34,7 @@ const Tabs = () => {
         options={{
           title: "Shop",
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? "home" : "home-outline"}
-              size={22}
-              color={COLORS.primary}
+            <Ionicons name={focused ? "home" : "home-outline"} size={22} color={COLORS.primary}
             />
           ),
         }}
@@ -34,10 +43,7 @@ const Tabs = () => {
         options={{
           title:"Cart",
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? "cart" : "cart-outline"}
-              size={22}
-              color={COLORS.primary}
+            <Ionicons name={focused ? "cart" : "cart-outline"} size={22} color={COLORS.primary}
             />
           ),
         }}
@@ -46,10 +52,7 @@ const Tabs = () => {
         options={{
           title:"Orders",
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? "file-tray" : "file-tray-outline"}
-              size={22}
-              color={COLORS.primary}
+            <Ionicons name={focused ? "file-tray" : "file-tray-outline"} size={22} color={COLORS.primary}
             />
           ),
         }}
