@@ -4,7 +4,6 @@ import ShopNavigator from "./shop";
 import OrdersNavigator from "./orders";
 import CartNavigator from "./cart";
 
-import { isAndroid } from "../utils";
 import { Ionicons } from "@expo/vector-icons" 
 import { COLORS } from "../constants/colors";
 

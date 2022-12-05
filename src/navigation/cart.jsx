@@ -1,11 +1,11 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Cart } from "../screens";
 
 import { COLORS } from "../constants/colors";
 
 
-const Stack = createBottomTabNavigator()
+const Stack = createNativeStackNavigator()
 
 const CartNavigator = () => {
   return(

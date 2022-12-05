@@ -6,7 +6,7 @@ import { styles } from "./styles"
 import { ProductItem } from '../../components'
 
 const Products = ({ navigation, route}) => {
-  const { categoryId, title } = route.params
+  const { categoryId } = route.params
 
   const filteredProducts = PRODUCTS.filter(product => product.categoryId == categoryId) 
 

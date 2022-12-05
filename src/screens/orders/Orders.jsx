@@ -11,8 +11,12 @@ const Orders = ({ navigation }) => {
     console.log(`order ${id} deleted`);
   }
 
+  const onDetails = (id) => {
+    navigation.navigate("OrderDetail", {orderId:id})
+  }
+
   const renderItem = ({ item }) => (
-    <OrderItem item={item} onDelete={onDelete} />
+    <OrderItem item={item} onDelete={onDelete} onDetails={onDetails}/>
   )
 
   return (

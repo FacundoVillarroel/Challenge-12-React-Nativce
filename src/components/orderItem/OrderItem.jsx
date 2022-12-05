@@ -6,7 +6,7 @@ import { styles } from "./styles";
 import { formatDate } from "../../utils/index";
 import { COLORS } from "../../constants/colors";
 
-const OrderItem = ({ item, onDelete }) => {
+const OrderItem = ({ item, onDelete, onDetails }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -18,6 +18,9 @@ const OrderItem = ({ item, onDelete }) => {
           <Ionicons name="trash" size={24} color={COLORS.danger} />
         </TouchableOpacity>
       </View>
+      <TouchableOpacity onPress={() => {onDetails(item.id)}} style={styles.buttonDetailContainer}>
+        <Text style={styles.details}>View Orders Details</Text>
+      </TouchableOpacity>
     </View>
   )
 }

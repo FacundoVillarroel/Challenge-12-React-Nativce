@@ -7,10 +7,10 @@ const Product = ({ navigation, route }) => {
   const { productId } = route.params 
 
   const filteredProduct = PRODUCTS.find( item => item.id === productId)
-  const { title, price, description } = filteredProduct || {}
+  const { title, price, description, id } = filteredProduct || {}
 
   const handleAddToCart = () => {
-    return null
+    console.warn(`product: ${title} Id: ${id} added to the cart`)
   }
 
   return (

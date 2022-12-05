@@ -1,10 +1,10 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Orders } from "../screens";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Orders, OrderDetail } from "../screens";
 
 import { COLORS } from "../constants/colors";
 
-const Stack = createBottomTabNavigator()
+const Stack = createNativeStackNavigator()
 
 const OrdersNavigator = () => {
   return(
@@ -12,18 +12,24 @@ const OrdersNavigator = () => {
       initialRouteName="Orders"
       screenOptions={{
         headerStyle: {
-          backgroundColor: COLORS.background,
+          backgroundColor: COLORS.secondary,
         },
         headerTintColor: COLORS.primaryText,
         headerTitleStyle: {
           fontFamily: 'Anek-Bold',
         },
-        headerBackTitle:"",
-        headerShown:false,
+        headerBackTitle:""
       }}>
         <Stack.Screen
           name="Orders"
           component={Orders}
+          options={{
+            headerShown:false
+          }}
+        />
+        <Stack.Screen
+          name="OrderDetail"
+          component={OrderDetail}
         />
       </Stack.Navigator>
   )
