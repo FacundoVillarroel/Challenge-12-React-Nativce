@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, ScrollView } from 'react-native';
 import React from 'react';
 
 import { styles } from "./styles"
@@ -20,21 +20,24 @@ const OrderDetail = ({navigate, route }) => {
   )
 
   return (
-    <View style={styles.container}>
-      <View style={styles.detailsContainer}>
-        <Text style={styles.text}>Order number: {id}</Text>
-        <Text style={styles.text}>Issued on: {formatDate(date)}</Text>
-        <Text style={styles.text}>Total: ${total}</Text>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.detailsContainer}>
+          <Text style={styles.text}>Order number: {id}</Text>
+          <Text style={styles.text}>Issued on: {formatDate(date)}</Text>
+          <Text style={styles.text}>Total: ${total}</Text>
+        </View>
+        <View style={styles.productsContainer}>
+          <Text style={styles.products}>PRODUCTS:</Text>
+          <FlatList 
+            nestedScrollEnabled
+            data={items}
+            keyExtractor={item => item.id}
+            renderItem={renderItem }
+          />
+        </View>
       </View>
-      <View style={styles.productsContainer}>
-        <Text style={styles.products}>PRODUCTS:</Text>
-        <FlatList 
-          data={items}
-          keyExtractor={item => item.id}
-          renderItem={renderItem }
-        />
-      </View>
-    </View>
+    </ScrollView>
   )
 }
 
