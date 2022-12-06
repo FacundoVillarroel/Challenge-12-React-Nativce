@@ -1,11 +1,13 @@
 import { FlatList, SafeAreaView } from 'react-native';
 import React from 'react';
 
-import { CATEGORIES } from "../../constants/data/index";
+import { useSelector } from 'react-redux';
 import { styles } from "./styles";
 import { CategoryItem } from '../../components';
 
 const Categories = ({ navigation }) => {
+
+  const categories = useSelector((state) => state.category.categories)
 
   const onSelected = (item) => {
     navigation.navigate("Products", {categoryId: item.id, title:item.title })
@@ -18,7 +20,7 @@ const Categories = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
         <FlatList
-          data={CATEGORIES}
+          data={categories}
           renderItem={renderItem}
           keyExtractor={(item) => item.id.toString()}
           style={styles.container}

@@ -1,6 +1,8 @@
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 
+import { Provider } from "react-redux";
+import store from './store';
 import AppNavigator from "./navigation/index"
 import { COLORS } from './constants/colors';
 
@@ -21,7 +23,9 @@ export default function App() {
   }
 
   return (
+    <Provider store={store}>
       <AppNavigator/>
+    </Provider>
   );
 }
 
