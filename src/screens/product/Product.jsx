@@ -1,13 +1,11 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { styles } from "./styles"
-import { PRODUCTS } from '../../constants/data'
+import { View, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { styles } from "./styles";
 
-const Product = ({ navigation, route }) => {
-  const { productId } = route.params 
-
-  const filteredProduct = PRODUCTS.find( item => item.id === productId)
-  const { title, price, description, id } = filteredProduct || {}
+const Product = ({ navigation }) => {
+  const product = useSelector((state) => state.products.selected)
+  const { title, price, description, id } = product || {}
 
   const handleAddToCart = () => {
     console.warn(`product: ${title} Id: ${id} added to the cart`)
