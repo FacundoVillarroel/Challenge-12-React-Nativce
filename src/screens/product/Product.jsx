@@ -1,14 +1,16 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../store/actions';
 import { styles } from "./styles";
 
 const Product = ({ navigation }) => {
+  const dispatch = useDispatch();
   const product = useSelector((state) => state.products.selected)
   const { title, price, description, id } = product || {}
 
   const handleAddToCart = () => {
-    console.warn(`product: ${title} Id: ${id} added to the cart`)
+    dispatch(addToCart(product))
   }
 
   return (
