@@ -4,3 +4,4 @@ export { default as Product } from "./product/Product";
 export { default as Cart } from "./cart/Cart";
 export { default as Orders } from "./orders/Orders";
 export { default as OrderDetail } from "./orderDetail/OrderDetail";
+export { default as Auth } from "./auth/Auth";
